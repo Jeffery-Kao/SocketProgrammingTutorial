@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketProgrammingTutorial", "SocketProgrammingTutorial\SocketProgrammingTutorial.csproj", "{4BCF2F97-7D97-4E7F-99D2-F0F960DCE554}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketProgrammingTutorial1_Server", "SocketProgrammingTutorial\SocketProgrammingTutorial1_Server.csproj", "{4BCF2F97-7D97-4E7F-99D2-F0F960DCE554}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketProgrammingTutorial1_Client", "SocketProgrammingTutorial1_Client\SocketProgrammingTutorial1_Client.csproj", "{5BB8F413-E446-4AF5-A545-CB4D5B0FEE6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4BCF2F97-7D97-4E7F-99D2-F0F960DCE554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BCF2F97-7D97-4E7F-99D2-F0F960DCE554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BCF2F97-7D97-4E7F-99D2-F0F960DCE554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BB8F413-E446-4AF5-A545-CB4D5B0FEE6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BB8F413-E446-4AF5-A545-CB4D5B0FEE6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BB8F413-E446-4AF5-A545-CB4D5B0FEE6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BB8F413-E446-4AF5-A545-CB4D5B0FEE6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
