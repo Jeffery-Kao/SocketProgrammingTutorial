@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +14,10 @@ namespace SocketProgrammingTutorial1_Client
         {
             TcpClient clientSocket = new TcpClient();
             Console.WriteLine(" >> Client Started");
+            IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
+            IPAddress ipAddress = ipHostInfo.AddressList[1];
 
-            clientSocket.Connect("127.0.0.1", 8888);
+            clientSocket.Connect(ipAddress, 11000);
             Console.WriteLine(" >> Client Socket Program -  server Connected.... ");
 
             while (true)

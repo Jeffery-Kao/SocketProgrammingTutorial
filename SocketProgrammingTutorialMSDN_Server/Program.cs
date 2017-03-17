@@ -12,10 +12,10 @@ namespace SocketProgrammingTutorialMSDN_Server
     {
         public static string data = null;
 
-        static int Main(string[] args)
+        static void Main(string[] args)
         {
             StartListening();
-            return 0;
+            Console.ReadLine();
         }
 
         private static void StartListening()
@@ -26,7 +26,7 @@ namespace SocketProgrammingTutorialMSDN_Server
             IPAddress ipAddress = ipHostInfo.AddressList[0];
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
 
-            Socket listner = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            Socket listner = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
             try
             {
