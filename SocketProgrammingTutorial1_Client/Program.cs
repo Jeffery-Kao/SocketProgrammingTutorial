@@ -30,6 +30,7 @@ namespace SocketProgrammingTutorial1_Client
                 byte[] inStream = new byte[10025];
                 serverStream.Read(inStream, 0, clientSocket.ReceiveBufferSize);
                 string returnedData = Encoding.ASCII.GetString(inStream);
+                returnedData = returnedData.Substring(0, returnedData.IndexOf("$"));
                 Console.WriteLine(" >> " + returnedData);
             }
         }

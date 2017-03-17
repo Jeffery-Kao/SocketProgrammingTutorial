@@ -33,7 +33,7 @@ namespace SocketProgrammingTutorial1_Server
                     dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"));
                     Console.WriteLine(" >> Data Data From Client - " + dataFromClient);
 
-                    string serverResponse = "Last message from client" + dataFromClient;
+                    string serverResponse = "Last message from client" + dataFromClient + "$";
                     byte[] sendBytes = Encoding.ASCII.GetBytes(serverResponse);
 
                     networkStream.Write(sendBytes, 0, sendBytes.Length);
