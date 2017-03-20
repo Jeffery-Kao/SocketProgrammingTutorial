@@ -23,7 +23,7 @@ namespace SocketProgrammingTutorialMSDN_Server
             byte[] bytes = new byte[1024];
 
             IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
-            IPAddress ipAddress = ipHostInfo.AddressList[1];
+            IPAddress ipAddress = ipHostInfo.AddressList.Where(x => x.AddressFamily == AddressFamily.InterNetwork).FirstOrDefault();
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
 
             Socket listner = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);

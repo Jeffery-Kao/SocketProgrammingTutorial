@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketProgrammingTutorialMS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketProgrammingTutorialMSDN_Client", "SocketProgrammingTutorialMSDN_Client\SocketProgrammingTutorialMSDN_Client.csproj", "{7DAD5CCD-A76D-46DB-A4B1-AF353F0E3706}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketProgrammingTutorialMSDN_AsyncServer", "SocketProgrammingTutorialMSDN_AsyncServer\SocketProgrammingTutorialMSDN_AsyncServer.csproj", "{7DB70F68-9EEB-4DD8-8E4E-DAF216ABB947}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7DAD5CCD-A76D-46DB-A4B1-AF353F0E3706}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DAD5CCD-A76D-46DB-A4B1-AF353F0E3706}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DAD5CCD-A76D-46DB-A4B1-AF353F0E3706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DB70F68-9EEB-4DD8-8E4E-DAF216ABB947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DB70F68-9EEB-4DD8-8E4E-DAF216ABB947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DB70F68-9EEB-4DD8-8E4E-DAF216ABB947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DB70F68-9EEB-4DD8-8E4E-DAF216ABB947}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -25,7 +25,7 @@ namespace SocketProgrammingTutorialMSDN_Client
                 Console.WriteLine("Who do you want to connect to?");
                 string user = Console.ReadLine();
                 IPHostEntry ipHostInfo = Dns.GetHostEntry(user);
-                IPAddress ipAddress = ipHostInfo.AddressList[0];
+                IPAddress ipAddress = ipHostInfo.AddressList.Where(x => x.AddressFamily == AddressFamily.InterNetwork).FirstOrDefault();
                 IPEndPoint remoteEP = new IPEndPoint(ipAddress, 11000);
 
 
