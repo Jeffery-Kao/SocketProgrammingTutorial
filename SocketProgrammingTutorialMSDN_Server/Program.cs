@@ -14,16 +14,16 @@ namespace SocketProgrammingTutorialMSDN_Server
 
         static void Main(string[] args)
         {
-            StartListening();
+            StartServer();
             Console.ReadLine();
         }
 
-        private static void StartListening()
+        private static void StartServer()
         {
             byte[] bytes = new byte[1024];
 
             IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
-            IPAddress ipAddress = ipHostInfo.AddressList[0];
+            IPAddress ipAddress = ipHostInfo.AddressList[1];
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
 
             Socket listner = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
@@ -39,6 +39,7 @@ namespace SocketProgrammingTutorialMSDN_Server
 
                     Socket handler = listner.Accept();
                     data = null;
+                    Console.WriteLine("Connected to Remote End Point: " + handler.RemoteEndPoint);
 
                     while (true)
                     {

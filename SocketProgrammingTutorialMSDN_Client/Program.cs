@@ -22,27 +22,32 @@ namespace SocketProgrammingTutorialMSDN_Client
 
             try
             {
-                IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
+                Console.WriteLine("Who do you want to connect to?");
+                string user = Console.ReadLine();
+                IPHostEntry ipHostInfo = Dns.GetHostEntry(user);
                 IPAddress ipAddress = ipHostInfo.AddressList[0];
                 IPEndPoint remoteEP = new IPEndPoint(ipAddress, 11000);
 
-                Socket sender = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
                 while (true)
                 {
                     try
                     {
+                        Socket sender = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+
                         sender.Connect(remoteEP);
 
                         Console.WriteLine("Socket connected to  {0}", sender.RemoteEndPoint.ToString());
                         string txString = Console.ReadLine();
-                        byte[] msg = Encoding.ASCII.GetBytes( txString + "<EOF>");
+                        byte[] msg = Encoding.ASCII.GetBytes(txString + "<EOF>");
 
                         int bytesSent = sender.Send(msg);
 
                         int bytesRec = sender.Receive(bytes);
 
                         string rxData = Encoding.ASCII.GetString(bytes, 0, bytesRec);
+                        rxData = ValidateRxData(rxData);
+
                         Console.WriteLine("Echoed test = {0}", rxData);
 
                         sender.Shutdown(SocketShutdown.Both);
@@ -59,6 +64,18 @@ namespace SocketProgrammingTutorialMSDN_Client
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
+            }
+        }
+
+        private static string ValidateRxData(string rxData)
+        {
+            if (rxData.Contains("<EOF>"))
+            {
+                return rxData = rxData.Replace("<EOF>", string.Empty);
+            }
+            else
+            {
+                throw new Exception("No <EOF> Returned");
             }
         }
     }
