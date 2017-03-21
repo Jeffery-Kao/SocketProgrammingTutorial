@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketProgrammingTutorialMS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketProgrammingTutorialMSDN_AsyncServer", "SocketProgrammingTutorialMSDN_AsyncServer\SocketProgrammingTutorialMSDN_AsyncServer.csproj", "{7DB70F68-9EEB-4DD8-8E4E-DAF216ABB947}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketProgrammingTutorialMSDN_AsyncClient", "SocketProgrammingTutorialMSDN_AsyncClient\SocketProgrammingTutorialMSDN_AsyncClient.csproj", "{AEA7365C-67DE-4C58-A805-CACD6378A710}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManualResetEventSampleMSDN", "ManualResetEventSampleMSDN\ManualResetEventSampleMSDN.csproj", "{AD0E15CC-1C9B-4909-99CB-5762FE4D9043}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{7DB70F68-9EEB-4DD8-8E4E-DAF216ABB947}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DB70F68-9EEB-4DD8-8E4E-DAF216ABB947}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DB70F68-9EEB-4DD8-8E4E-DAF216ABB947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEA7365C-67DE-4C58-A805-CACD6378A710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEA7365C-67DE-4C58-A805-CACD6378A710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEA7365C-67DE-4C58-A805-CACD6378A710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEA7365C-67DE-4C58-A805-CACD6378A710}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD0E15CC-1C9B-4909-99CB-5762FE4D9043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD0E15CC-1C9B-4909-99CB-5762FE4D9043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD0E15CC-1C9B-4909-99CB-5762FE4D9043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD0E15CC-1C9B-4909-99CB-5762FE4D9043}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
