@@ -23,7 +23,7 @@ namespace SocketProgrammingTutorialMSDN_AsyncServer
     public class AsynchonousSocketListner
     {
         public static ManualResetEvent allDone = new ManualResetEvent(false);
-
+        public static Socket listener = null;
         public static void StartListening()
         {
             byte[] bytes = new byte[1024];
@@ -32,7 +32,7 @@ namespace SocketProgrammingTutorialMSDN_AsyncServer
             IPAddress ipAddress = ipHostInfo.AddressList.Where(x => x.AddressFamily == AddressFamily.InterNetwork).FirstOrDefault();
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
 
-            Socket listener = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            listener = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
             try
             {
@@ -53,6 +53,11 @@ namespace SocketProgrammingTutorialMSDN_AsyncServer
             {
                 Console.WriteLine(e.ToString());
             }
+            //finally
+            //{
+            //    listener.Shutdown(SocketShutdown.Both);
+            //    listener.Close();
+            //}
 
             Console.WriteLine("\n Press ENTER to Continue...");
             Console.ReadLine();
@@ -135,12 +140,4 @@ namespace SocketProgrammingTutorialMSDN_AsyncServer
             return 0;
         }
     }
-    //public class Program
-    //{
-    //    public static int Main(string[] args)
-    //    {
-    //        StartListening();
-    //        return 0;
-    //    }
-    //}
 }

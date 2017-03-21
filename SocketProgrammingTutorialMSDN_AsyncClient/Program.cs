@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -63,16 +64,14 @@ namespace SocketProgrammingTutorialMSDN_AsyncClient
                     receiveDone.WaitOne();
 
                     Console.WriteLine("Response Recieved: {0}", response);
+
+                    client.Shutdown(SocketShutdown.Both);
+                    client.Close();
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
-            }
-            finally
-            {
-                client.Shutdown(SocketShutdown.Both);
-                client.Close();
             }
         }
 
@@ -128,10 +127,22 @@ namespace SocketProgrammingTutorialMSDN_AsyncClient
                 if (state.sb.Length > 1)
                 {
                     response = state.sb.ToString();
+                    //WriteRxLog(response);
                 }
                 receiveDone.Set();
             }
         }
+
+        //private static void WriteRxLog(string response)
+        //{
+        //    using (StreamWriter writer = new StreamWriter(Directory.GetCurrentDirectory() + "\\Rx.Log", true))
+        //    {
+        //        DateTime Now = DateTime.Now;
+        //        writer.Write(Environment.NewLine + Now.ToString());
+        //        writer.Write(" ---> ");
+        //        writer.Write(response);
+        //    }
+        //}
 
         private static void Send(Socket client, string data)
         {
