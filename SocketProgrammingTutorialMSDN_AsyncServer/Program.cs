@@ -114,7 +114,7 @@ namespace SocketProgrammingTutorialMSDN_AsyncServer
             handler.BeginSend(byteData, 0, byteData.Length, 0, new AsyncCallback(SendCallback), handler);
         }
 
-        // This method is executed on a worker thread after the bend is complete.
+        // This method is executed on a worker thread after the send is complete.
         private static void SendCallback(IAsyncResult ar)
         {
             try

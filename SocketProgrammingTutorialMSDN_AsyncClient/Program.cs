@@ -33,7 +33,7 @@ namespace SocketProgrammingTutorialMSDN_AsyncClient
 
         private static string response = string.Empty;
         private static Socket client = null;
-        private static void StartClient()
+        public static void StartClient()
         {
             try
             {
